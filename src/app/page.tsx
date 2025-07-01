@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import { Container, Typography, Alert, Box } from '@mui/material'
-import SplashCover from '@/components/SplashCover'
-import FilterBar from '@/components/FilterBar'
-import MajorsDataGrid from '@/components/MajorsDataGrid'
-import LoadingState from '@/components/LoadingState'
+import SplashCover from '@/components/theme/SplashCover'
+import FilterBar from '@/components/data/FilterBar'
+import MajorsDataGrid from '@/components/data/MajorsDataGrid'
+import LoadingState from '@/components/data/LoadingState'
 
 import { applyFilters, FilterState } from '@/lib/utils/filter'
 import { CollegeMajorInfo } from '@/lib/utils/college'
