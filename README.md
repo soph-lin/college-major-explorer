@@ -2,7 +2,18 @@
 
 This project uses data from the **College Scorecard API**, an official service maintained by the U.S. Department of Education. The API provides comprehensive, up-to-date data on U.S. colleges and universities, including information about academic programs, graduation rates, student debt, and post-graduation earnings. Learn more at [collegescorecard.ed.gov](https://collegescorecard.ed.gov).
 
+## Data
+
 Industry information is obtained from the CIP code's 2-digit prefix (formatted as: `xx.yyyy` where `xx` is the prefix). The mapping from CIP prefix to industry name is located in `lib/constants/cipIndustryMap.ts`, generalized from [01-60 Mappings](https://nces.ed.gov/ipeds/cipcode/browse.aspx?y=55) found on National Center for Education Statistics website.
+
+Median earnings is more specifically that of graduates working and not enrolled 2 years after completing the highest credential. This statistic isn't available for several programs, so a future feature would be to fetch other median earning statistics in place. I haven't yet determined a satisfactory UX for this yet, so this feature is yet to implemented. Median earnings that could be useful:
+
+- Median earnings of graduates working and not enrolled 1 year after completing highest credential
+- Median earnings of graduates working and not enrolled 2 years after completing highest credential
+- Median earnings of graduates working and not enrolled 1 year after completing
+- Median earnings of graduates working and not enrolled 4 years after completing
+- Median earnings of graduates working and not enrolled 5 years after completing
+- NOTE: This list excludes demographic-specific median earnings such as for non-male graduates, for Pell recipients, etc. which are also available on the College Scorecard API.
 
 ## Getting Started
 
