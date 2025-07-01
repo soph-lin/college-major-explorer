@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Container, Typography, Alert, Box } from '@mui/material'
-import { GraduationCap } from 'lucide-react'
+import SplashCover from '@/components/SplashCover'
 import FilterBar from '@/components/FilterBar'
 import MajorsDataGrid from '@/components/MajorsDataGrid'
 import LoadingState from '@/components/LoadingState'
@@ -87,8 +87,17 @@ export default function Home() {
   return (
     <Container maxWidth="xl" sx={{ py: 4 }}>
       {/* Header */}
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 4 }}>
-        <GraduationCap size={32} />
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          gap: 2,
+          mb: 4,
+        }}
+      >
+        <SplashCover />
         <Typography variant="h4" component="h1" fontWeight="bold">
           NYC College Major Explorer
         </Typography>
