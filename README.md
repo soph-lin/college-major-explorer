@@ -1,6 +1,6 @@
 ## About
 
-A simple front-end web tool that allows users to filter and explore academic majors offered by NYC colleges.
+A simple front-end web tool that allows users to filter and explore academic majors offered by NYC colleges. You can use it at [college-major-explorer.sophli.in](https://college-major-explorer.sophli.in).
 
 Built with React, NextJS, Typescript, and Material UI.
 
@@ -22,6 +22,8 @@ Median earnings is more specifically that of graduates working and not enrolled 
 - NOTE: This list excludes demographic-specific median earnings such as for non-male graduates, for Pell recipients, etc. which are also available on the College Scorecard API.
 
 ## Getting Started
+
+The below guide is if you want to set up the website locally. Otherwise, go to [college-major-explorer.sophli.in](https://college-major-explorer.sophli.in).
 
 ### Install pnpm package manager
 
