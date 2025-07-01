@@ -20,7 +20,7 @@ export default function LoadingState({
     >
       <CircularProgress size={60} />
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-        <Typography variant="h6" color="text.secondary">
+        <Typography variant="h6" color="foreground">
           {message}
         </Typography>
       </Box>
