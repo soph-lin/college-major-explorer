@@ -27,7 +27,7 @@ export async function fetchNYCMajors(): Promise<CollegeMajorInfo[]> {
   const url = new URL(API_BASE)
   url.searchParams.set("api_key", apiKey)
   url.searchParams.set("school.city", "New York")
-  url.searchParams.set("per_page", "75")
+  url.searchParams.set("per_page", "75") // This is 75 because this is the total number of results for NYC colleges, but in the future pagination will be implemented
   url.searchParams.set("fields", [
     "programs.cip_4_digit.code",
     "programs.cip_4_digit.school.name",
