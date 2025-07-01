@@ -86,3 +86,9 @@ pnpm dev
 ```
 
 Open up your browser and go to [http://localhost:3000](http://localhost:3000) to see the website.
+
+## Errors
+
+When you receive the `Failed to fetch majors: Internal Server Error`, sometimes this just happens and you have to wait a few minutes for the API to work again.
+
+Otherwise, check your API key and make sure you have a working API key. You can check this by doing a sample fetch in your browser: `https://api.data.gov/ed/collegescorecard/v1/schools?api_key=<YOUR_API_KEY>&school.state=NY&school.city=New York`.
