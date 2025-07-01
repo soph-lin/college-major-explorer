@@ -8,8 +8,11 @@ export type FilterState = {
   minEarnings: number | null
 }
 
-export function applyFilters(data: CollegeMajorInfo[], filters: FilterState): CollegeMajorInfo[] {
-  return data.filter(item => {
+export function applyFilters(
+  data: CollegeMajorInfo[],
+  filters: FilterState,
+): CollegeMajorInfo[] {
+  return data.filter((item) => {
     // Filter by college
     if (filters.college && item.college_name !== filters.college) {
       return false
@@ -26,12 +29,19 @@ export function applyFilters(data: CollegeMajorInfo[], filters: FilterState): Co
     }
 
     // Filter by search term (major name)
-    if (filters.searchTerm && !item.major_name.toLowerCase().includes(filters.searchTerm.toLowerCase())) {
+    if (
+      filters.searchTerm &&
+      !item.major_name.toLowerCase().includes(filters.searchTerm.toLowerCase())
+    ) {
       return false
     }
 
     // Filter by minimum earnings
-    if (filters.minEarnings && item.median_earnings && item.median_earnings < filters.minEarnings) {
+    if (
+      filters.minEarnings &&
+      item.median_earnings &&
+      item.median_earnings < filters.minEarnings
+    ) {
       return false
     }
 
@@ -39,8 +49,11 @@ export function applyFilters(data: CollegeMajorInfo[], filters: FilterState): Co
   })
 }
 
-export function getUniqueValues(data: CollegeMajorInfo[], field: keyof CollegeMajorInfo): string[] {
-  const values = data.map(item => item[field]).filter(Boolean) as string[]
+export function getUniqueValues(
+  data: CollegeMajorInfo[],
+  field: keyof CollegeMajorInfo,
+): string[] {
+  const values = data.map((item) => item[field]).filter(Boolean) as string[]
   return [...new Set(values)].sort()
 }
 
@@ -54,10 +67,13 @@ export function formatEarnings(earnings: number | null): string {
   }).format(earnings)
 }
 
-export function searchMajors(data: CollegeMajorInfo[], searchTerm: string): CollegeMajorInfo[] {
+export function searchMajors(
+  data: CollegeMajorInfo[],
+  searchTerm: string,
+): CollegeMajorInfo[] {
   if (!searchTerm.trim()) return data
-  
-  return data.filter(item =>
-    item.major_name.toLowerCase().includes(searchTerm.toLowerCase())
+
+  return data.filter((item) =>
+    item.major_name.toLowerCase().includes(searchTerm.toLowerCase()),
   )
 }

@@ -1,17 +1,17 @@
-import { TextField, InputAdornment } from "@mui/material";
-import { Search } from "lucide-react";
+import { TextField, InputAdornment } from '@mui/material'
+import { Search } from 'lucide-react'
 
 interface SearchBarProps {
-  value: string;
-  onChange: (value: string) => void;
-  placeholder?: string;
-  disabled?: boolean;
+  value: string
+  onChange: (value: string) => void
+  placeholder?: string
+  disabled?: boolean
 }
 
 export default function SearchBar({
   value,
   onChange,
-  placeholder = "Search by major name...",
+  placeholder = 'Search by major name...',
   disabled = false,
 }: SearchBarProps) {
   return (
@@ -30,5 +30,5 @@ export default function SearchBar({
         ),
       }}
     />
-  );
+  )
 }

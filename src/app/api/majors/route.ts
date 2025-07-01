@@ -7,18 +7,23 @@ export async function GET() {
     return NextResponse.json(data)
   } catch (error) {
     console.error('Error fetching majors:', error)
-    
+
     // If it's a fetch error, there might be HTML instead of JSON
     if (error instanceof Error && error.message.includes('Unexpected token')) {
       return NextResponse.json(
-        { error: 'API returned invalid response. Please check your API key and try again.' },
-        { status: 500 }
+        {
+          error:
+            'API returned invalid response. Please check your API key and try again.',
+        },
+        { status: 500 },
       )
     }
-    
+
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : 'Failed to fetch data' },
-      { status: 500 }
+      {
+        error: error instanceof Error ? error.message : 'Failed to fetch data',
+      },
+      { status: 500 },
     )
   }
-} 
+}
