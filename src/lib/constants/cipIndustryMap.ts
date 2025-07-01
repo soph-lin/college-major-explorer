@@ -4,7 +4,7 @@ Maps CIP 2-digit codes to industry names.
 Source: https://nces.ed.gov/ipeds/cipcode/browse.aspx?y=55
 */
 
-const CIP2_TO_INDUSTRY: Record<string, string> = {
+const INDUSTRY_MAP: Record<string, string> = {
     "01": "Agriculture",
     "03": "Environmental Science",
     "04": "Architecture",
@@ -44,4 +44,4 @@ const CIP2_TO_INDUSTRY: Record<string, string> = {
     "61": "STEM",
 };
 
-export default CIP2_TO_INDUSTRY;
+export default INDUSTRY_MAP;
