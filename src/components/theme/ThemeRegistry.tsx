@@ -15,6 +15,13 @@ const theme = createTheme({
       main: '#dc004e',
     },
   },
+  typography: {
+    fontFamily: 'var(--font-fira-code), "Fira Code", "Courier New", monospace',
+    allVariants: {
+      fontFamily:
+        'var(--font-fira-code), "Fira Code", "Courier New", monospace',
+    },
+  },
 })
 
 export default function ThemeRegistry({
