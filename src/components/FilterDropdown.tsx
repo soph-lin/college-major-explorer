@@ -4,15 +4,15 @@ import {
   Select,
   MenuItem,
   SelectChangeEvent,
-} from "@mui/material";
-import { ChevronDown } from "lucide-react";
+} from '@mui/material'
+import { ChevronDown } from 'lucide-react'
 
 interface FilterDropdownProps {
-  label: string;
-  value: string;
-  options: string[];
-  onChange: (value: string) => void;
-  disabled?: boolean;
+  label: string
+  value: string
+  options: string[]
+  onChange: (value: string) => void
+  disabled?: boolean
 }
 
 export default function FilterDropdown({
@@ -23,8 +23,8 @@ export default function FilterDropdown({
   disabled = false,
 }: FilterDropdownProps) {
   const handleChange = (event: SelectChangeEvent<string>) => {
-    onChange(event.target.value);
-  };
+    onChange(event.target.value)
+  }
 
   return (
     <FormControl fullWidth size="small" disabled={disabled}>
@@ -40,7 +40,7 @@ export default function FilterDropdown({
         IconComponent={ChevronDown}
       >
         <MenuItem value="">
-          <em>All {label}s</em>
+          <em>{label === 'Industry' ? 'All Industries' : `All ${label}s`}</em>
         </MenuItem>
         {options.map((option) => (
           <MenuItem key={option} value={option}>
@@ -49,5 +49,5 @@ export default function FilterDropdown({
         ))}
       </Select>
     </FormControl>
-  );
+  )
 }
