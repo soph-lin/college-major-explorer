@@ -1,5 +1,9 @@
 ## About
 
+A simple front-end web tool that allows users to filter and explore academic majors offered by NYC colleges.
+
+Built with React, NextJS, Typescript, and Material UI.
+
 This project uses data from the [**College Scorecard API**](https://collegescorecard.ed.gov/data/api), an official service maintained by the U.S. Department of Education. The API provides comprehensive, up-to-date data on U.S. colleges and universities, including information about academic programs, graduation rates, student debt, and post-graduation earnings. Learn more at [collegescorecard.ed.gov](https://collegescorecard.ed.gov).
 
 ## Data
