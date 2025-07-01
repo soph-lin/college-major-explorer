@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+### Install pnpm package manager
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+`pnpm` is a package manager built on top of `npm` and is much faster than `npm`, being highly disk efficient and solving inherent issues in `npm`.
+
+Install `pnpm` if you don't already have it:
+
+```
+npm install -g pnpm
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Optional: set up a shorter alias like pn instead**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+For POSIX systems, add the following to your .bashrc, .zshrc, or config.fish:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`alias pn=pnpm`
 
-## Learn More
+For Powershell (Windows), go to a Powershell window with admin rights and run:
 
-To learn more about Next.js, take a look at the following resources:
+`notepad $profile.AllUsersAllHosts`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+In the profile.ps1 file that opens, put:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`set-alias -name pn -value pnpm`
 
-## Deploy on Vercel
+Now whenever you have to run a `pnpm` cmd, you can type in `pn` (or whatever alias you created) instead.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Obtain College Scorecard API Key
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Go to [College Scorecard API](https://collegescorecard.ed.gov/data/api).
+
+Under the **API Access and Authentication** section request an API key to be sent to a designated email.
+
+Shortly you should receive an email from `noreply@api.data.gov` with the subject `Your API key`. There, you can acquire your API key at last! Hooray!
+
+### Set up repository
+
+Clone the repository and go into the directory:
+
+```
+git clone https://github.com/soph-lin/college-major-explorer.git
+
+cd college-major-explorer
+```
+
+Install packages:
+
+```
+pnpm i
+```
+
+Create an `.env` file in the root directory and add your College Scorecard API key:
+
+```
+COLLEGE_SCORECARD_KEY=<...>
+```
+
+### Run the development server
+
+Run:
+
+```
+pnpm dev
+```
+
+Open up your browser and go to [http://localhost:3000](http://localhost:3000) to see the website.
