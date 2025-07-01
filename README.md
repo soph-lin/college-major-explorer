@@ -1,3 +1,9 @@
+## About
+
+This project uses data from the **College Scorecard API**, an official service maintained by the U.S. Department of Education. The API provides comprehensive, up-to-date data on U.S. colleges and universities, including information about academic programs, graduation rates, student debt, and post-graduation earnings. Learn more at [collegescorecard.ed.gov](https://collegescorecard.ed.gov).
+
+Industry information is obtained from the CIP code's 2-digit prefix (formatted as: `xx.yyyy` where `xx` is the prefix). The mapping from CIP prefix to industry name is located in `lib/constants/cipIndustryMap.ts`, generalized from [01-60 Mappings](https://nces.ed.gov/ipeds/cipcode/browse.aspx?y=55) found on National Center for Education Statistics website.
+
 ## Getting Started
 
 ### Install pnpm package manager
