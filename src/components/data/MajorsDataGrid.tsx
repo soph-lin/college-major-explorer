@@ -1,4 +1,4 @@
-import { DataGrid, GridColDef, GridValueGetter } from '@mui/x-data-grid'
+import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid'
 import { Box, Typography } from '@mui/material'
 import {
   GraduationCap,
@@ -76,7 +76,7 @@ const columns: GridColDef[] = [
         <span>Median Earnings</span>
       </Box>
     ),
-    renderCell: (params: any) => {
+    renderCell: (params: GridRenderCellParams) => {
       return formatEarnings(params.value)
     },
   },

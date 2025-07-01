@@ -1,5 +1,4 @@
 import { Box, CircularProgress, Typography } from '@mui/material'
-import { Loader2 } from 'lucide-react'
 
 interface LoadingStateProps {
   message?: string

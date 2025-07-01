@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, Chip } from '@mui/material'
+import { Box, Typography, Chip } from '@mui/material'
 import { Filter, X } from 'lucide-react'
 import FilterDropdown from './FilterDropdown'
 import SearchBar from './SearchBar'

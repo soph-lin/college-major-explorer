@@ -1,11 +1,43 @@
 import INDUSTRY_MAP from '../constants/cipIndustryMap'
 
+// Major info
 export type CollegeMajorInfo = {
   major_name: string
   college_name: string
   industry: string
   degree_type: string
   median_earnings: number | null
+}
+
+// API response types
+interface ProgramCredential {
+  title: string
+}
+
+interface ProgramEarnings {
+  highest: {
+    '2_yr': {
+      overall_median_earnings: number
+    }
+  }
+}
+
+interface Program {
+  code: string
+  title: string
+  school: {
+    name: string
+  }
+  credential?: ProgramCredential
+  earnings?: ProgramEarnings
+}
+
+interface CollegeResult {
+  'latest.programs.cip_4_digit': Program[]
+}
+
+interface ApiResponse {
+  results: CollegeResult[]
 }
 
 const DEGREE_MAP: Record<string, string> = {
@@ -47,16 +79,16 @@ export async function fetchNYCMajors(): Promise<CollegeMajorInfo[]> {
     throw new Error(`Failed to fetch majors: ${res.statusText}`)
   }
 
-  const data = await res.json()
+  const data: ApiResponse = await res.json()
   if (!data.results) return []
 
   const allMajors: CollegeMajorInfo[] = []
 
-  data.results.forEach((item: any) => {
+  data.results.forEach((item: CollegeResult) => {
     const programs = item['latest.programs.cip_4_digit']
     if (!programs || !Array.isArray(programs)) return
 
-    programs.forEach((program: any) => {
+    programs.forEach((program: Program) => {
       if (!program || !program.title || !program.school) return
 
       const cipCode = program.code
