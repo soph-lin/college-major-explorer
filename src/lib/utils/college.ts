@@ -29,6 +29,7 @@ export async function fetchNYCMajors(): Promise<CollegeMajorInfo[]> {
   url.searchParams.set("school.city", "New York")
   url.searchParams.set("per_page", "75")
   url.searchParams.set("fields", [
+    "programs.cip_4_digit.code",
     "programs.cip_4_digit.school.name",
     "programs.cip_4_digit.title",
     "programs.cip_4_digit.credential.title",
@@ -54,6 +55,7 @@ export async function fetchNYCMajors(): Promise<CollegeMajorInfo[]> {
     programs.forEach((program: any) => {
       if (!program || !program.title || !program.school) return
 
+      const cipCode = program.code
       const major = program.title.slice(0, -1) // Remove period at end of major name
       const college = program.school.name
       const degreeTitle = program.credential?.title || "Unknown"
@@ -62,7 +64,7 @@ export async function fetchNYCMajors(): Promise<CollegeMajorInfo[]> {
       allMajors.push({
         major_name: major,
         college_name: college,
-        industry: INDUSTRY_MAP[major] ?? "Other",
+        industry: INDUSTRY_MAP[cipCode.slice(0, 2)] ?? "Other",
         degree_type: DEGREE_MAP[degreeTitle] ?? "Unknown",
         median_earnings: earnings ?? null,
       })
