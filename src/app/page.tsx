@@ -77,7 +77,8 @@ export default function Home() {
           </Typography>
           <Typography>{error}</Typography>
           <Typography variant="body2" sx={{ mt: 1 }}>
-            Please check your API key and try again.
+            Please check your API key and try again. You might just need to wait
+            a few minutes and refresh the website!
           </Typography>
         </Alert>
       </Container>
